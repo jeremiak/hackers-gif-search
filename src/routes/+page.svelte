@@ -4,14 +4,29 @@
 </script>
 
 <svelte:head>
-	<title>Search Hackers gifs</title>
-	<meta name="description" content="" />
+	<title>Search clips from Hackers</title>
+	<meta
+		name="description"
+		content="Search through the Mastodon posts of the @hackers_gifs bot to find the right clip"
+	/>
 </svelte:head>
 
 <section>
 	<h1>Want a specific clip from "Hackers"?</h1>
-	<p>Search through the posts from the excellent <a href="https://botsin.space/@hackers_gifs/">@hackers_gifs@botsin.space</a> bot to find the right post for the occasion, all from the 1995 classic movie.</p>
-	<p>This site indexes the bot's posts once a day to avoid hitting the Mastodon API for every query. But all of the video files remain on the <a href="https://botsin.space">botsin.space</a> site, which seems to employ some rate limiting based on IP addresses. This means that you can only see 300 results every five minutes. If you see search results but no GIFs, be like <a href="https://botsin.space/@hackers_gifs/111142762281543957">Joey and go get another cup of coffee</a>.</p>
+	<p>
+		Search through the posts from the excellent <a href="https://botsin.space/@hackers_gifs/"
+			>@hackers_gifs@botsin.space</a
+		> bot to find the right post for the occasion, all from the 1995 classic movie.
+	</p>
+	<p>
+		This site indexes the bot's posts once a day to avoid hitting the Mastodon API for every query.
+		But all of the video files remain on the <a href="https://botsin.space">botsin.space</a> site,
+		which seems to employ some rate limiting based on IP addresses. This means that you can only see
+		300 results every five minutes. If you see search results but no GIFs, be like
+		<a href="https://botsin.space/@hackers_gifs/111142762281543957"
+			>Joey and go get another cup of coffee</a
+		>.
+	</p>
 
 	<form>
 		<label for="query">Query</label>
@@ -23,7 +38,7 @@
 			value={data.query}
 		/>
 
-		<button>Search animated GIFs</button>
+		<button>Search the Gibson</button>
 	</form>
 
 	{#if data.query}
