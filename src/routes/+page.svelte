@@ -9,13 +9,9 @@
 </svelte:head>
 
 <section>
-	<h1>Search Hackers GIFs</h1>
-	<p>
-		There's <a href="https://botsin.space/@hackers_gifs/"
-			>an excellent account (@hackers_gifs@botsin.space)</a
-		> that posts a GIF from the 1995 classic Hackers. This site tries to make it easy to search the text
-		of each GIF to find the one you want.
-	</p>
+	<h1>Want a specific clip from "Hackers"?</h1>
+	<p>Search through the posts from the excellent <a href="https://botsin.space/@hackers_gifs/">@hackers_gifs@botsin.space</a> bot to find the right post for the occasion, all from the 1995 classic movie.</p>
+	<p>This site indexes the bot's posts once a day to avoid hitting the Mastodon API for every query. But all of the video files remain on the <a href="https://botsin.space">botsin.space</a> site, which seems to employ some rate limiting based on IP addresses. This means that you can only see 300 results every five minutes. If you see search results but no GIFs, be like <a href="https://botsin.space/@hackers_gifs/111142762281543957">Joey and go get another cup of coffee</a>.</p>
 
 	<form>
 		<label for="query">Query</label>
@@ -63,6 +59,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: calc(3 * var(--spacing-unit));
+		margin-top: calc(10 * var(--spacing-unit));
 	}
 
 	label {
@@ -87,11 +84,19 @@
 	.results ul {
 		display: grid;
 		padding-left: 0;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
 		gap: calc(5 * var(--spacing-unit));
 	}
 
+	@media (min-width: 750px) {
+		.results ul {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
 	.results li {
+		display: flex;
+		justify-content: center;
 		list-style-type: none;
 	}
 </style>
