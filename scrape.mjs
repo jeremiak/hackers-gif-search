@@ -27,7 +27,10 @@ async function fetchAllPosts(url = '', data = []) {
 			rel: rel[1]
 		};
 	});
+
 	const next = links.find((d) => d.rel === 'next');
+	if (!next) return data
+
 	return fetchAllPosts(next.url, data);
 }
 
